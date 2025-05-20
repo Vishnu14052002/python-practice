@@ -1,0 +1,26 @@
+*{
+  background-color: rgb(30, 29, 29);
+  color: white;
+}
+
+.home-buttons{
+  padding: 9px;
+  margin: 10px;
+  font-size: 1.2rem;
+}
+
+.active{
+  background-color: rgb(120, 135, 135);
+}
+
+
+.forminput{
+  padding: 10px;
+  margin: 5px;
+}
+
+.submit-button{
+  width: 100px;
+  height: 30px;
+  margin-top: 10px;
+}

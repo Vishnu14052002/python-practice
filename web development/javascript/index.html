@@ -1,0 +1,33 @@
+<label for="name">Enter number 1:</label>
+<input type="text" id="name1" name="name">
+<br>
+<label for="name">Enter number 2:</label>
+<input type="text" id="name2" name="name">
+<br>
+<button onclick="results()">Results</button>
+
+<p id="changed">This is result</p>
+
+<script>
+function results() {
+    var name1 = document.getElementById("name1").value;
+    var name2 = document.getElementById("name2").value;
+
+    // Convert the input values to numbers
+    var num1 = parseInt(name1);
+    var num2 = parseInt(name2);
+
+    // Check if both inputs are valid numbers
+    if (isNaN(num1) || isNaN(num2)) {
+        
+
+        console.log("Please enter valid numbers.");
+    } else {
+        var result = num1 + num2; // Add the numbers
+        
+        console.log(result); // Prints the result of the addition
+        var chang = document.getElementById("changed")
+        chang.textContent = result
+    }
+}
+</script>

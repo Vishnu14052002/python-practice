@@ -1,0 +1,24 @@
+<button onclick="add()">add</button>
+<p style="visibility: hidden;" id="paragraph">hello</p>
+<div id="container"></div>
+
+<script>
+
+function add()
+{
+    var para = document.getElementById("paragraph").style.visibility = "visible"
+    console.log(para.textContent)
+
+
+    var newParagraph = document.createElement("p");
+            
+    // Add text content to the paragraph
+    newParagraph.textContent = "hello";
+    
+    // Append the new paragraph to the container div
+    document.getElementById("container").appendChild(newParagraph);
+}
+
+</script>
+
+

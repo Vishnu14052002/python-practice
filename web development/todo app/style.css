@@ -1,0 +1,16 @@
+.mainheading{
+    text-align: center;
+}
+.formpara{
+    display: inline-block;
+}
+.mainform{
+    text-align: center;
+}
+.subform{
+    text-align: center;
+    visibility: hidden;
+}
+.formparaa_two_class{
+    visibility: hidden;
+}

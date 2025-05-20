@@ -1,0 +1,17 @@
+.addingtask{
+    display: flex;
+    justify-content: center;
+}
+.formparaa_two_class{
+    display: none;
+}
+.mainform{
+    display: flex;
+    align-items: center;
+}
+.formpara{
+    margin-right: 10px;
+}
+.alltaskheading{
+    text-align: center;
+}

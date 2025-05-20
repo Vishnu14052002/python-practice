@@ -1,0 +1,62 @@
+<h1>gusse the number</h1>
+<input id="guzzed_number_input_value"></input>
+<button onclick="clicking()">click to show results</button>
+<p id="paragraph">results will show here</p>
+
+
+<script>
+
+
+// var gusse = document.getElementById("guzzed_number_input_value")
+// // console.log(gusse.value)
+// // console.log(typeof(gusse))
+// var gussee = parseInt(gusse.value)
+// console.log(typeof(gussee))
+// // console.log(gussee)
+// console.log(gussee)
+
+// var randomValue = Math.floor(Math.random() * 10) + 1
+// console.log(randomValue)
+
+
+// if(gussee === randomValue)
+// {
+//     console.log("perfect")
+// }
+// else{
+//     console.log("incorrect")
+// }
+
+
+
+
+function clicking()
+{
+    
+    var para = document.getElementById("paragraph")
+    console.log(para.textContent)
+    var gusse = document.getElementById("guzzed_number_input_value")
+    console.log(gusse.value)
+    var gussee = parseInt(gusse.value)
+    console.log(typeof(gussee))
+    // console.log(gussee)
+    console.log(gussee)
+
+    var randomValue = Math.floor(Math.random() * 10) + 1
+    console.log(randomValue)
+
+
+    if(gussee === randomValue)
+    {
+        para.textContent = "right"
+        console.log("perfect")
+    }
+    else{
+        para.textContent = "wrong"
+        console.log("incorrect")
+    }
+    
+}
+
+
+</script>

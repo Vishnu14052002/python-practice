@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainbanner{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    background-color: rgb(246, 237, 226);
+}
+
+.mainbanner_sectionone{
+    width: 50%;
+    margin-left: 40px;
+}
+
+.mainbanner_sectionone_headingone{
+    font-weight: 500;
+}
+
+.mainbanner_sectionone_buttonone{
+    padding: 8px;
+    border-radius: 8px;
+    background-color: rgb(107, 161, 183);
+    border: none;
+    font-size: 15px;
+    color: white;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.mainbanner_sectiontwo{
+    display: block;
+}
+
+.mainbanner_sectionone_image{
+    width: 250px;
+    
+}
+
+
+
+
+
+
+.aboutmebanner{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.aboutmebanner_firstsection_heading{
+    margin-bottom: 10px;
+}
+
+.aboutmebanner_firstsection{
+    align-items: flex-start; 
+    margin-left: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.justtwolinecontent{
+    display: flex;
+    margin-top: 10px;
+}
+
+.justtwolinecontentparatwo{
+    margin-left: 20px;
+}
+
+
+.aboutmebanner_secondsection_image{
+    width: 200px;
+    height: 200px;
+}
+
+
+
+
+.projects_section{
+    background-color: rgb(246, 237, 226);
+    padding-bottom: 20px;
+}
+
+.projects_section_main_heading{
+    padding-top: 30px;
+    padding-left: 40px;
+    margin-bottom: 20px;
+}
+
+.project_one{
+    width: 140px;
+    background-color: white;
+    margin-left: 40px;
+    
+}
+
+.project_one_image_one{
+    width: 140px;
+    height: 140px;
+}
+
+.projects_section_all_projects{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
