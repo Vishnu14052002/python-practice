@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
-function Addtask() {
-
-  
+function Addtask({ onAdd }) {
+  const [taskName, setTaskName] = useState('');
+  const [taskDescription, setTaskDescription] = useState('');
+  const [date, setDate] = useState('');
 
   useEffect(() => {
     const today = new Date().toISOString().split('T')[0];
@@ -12,30 +13,53 @@ function Addtask() {
   function handleButton(event) {
     event.preventDefault();
 
-    const taskName = document.getElementById("task").value;
-    const taskDescription = document.getElementById("taskDescription").value;
-    const date = document.getElementById("date").value;
+    const newTask = {
+      name: taskName,
+      description: taskDescription,
+      date: date
+    };
 
-    console.log(taskName);
-    console.log(taskDescription);
-    console.log(date);
+    console.log(newTask);
+    onAdd(newTask); // Pass task to parent
+    setTaskName('');
+    setTaskDescription('');
+    setDate('');
   }
 
   return (
     <div className="addtask-container">
       <div className="form-card">
         <h1 className="form-title">Add Task</h1>
-        <form className='mytaskform'>
+        <form className='mytaskform' onSubmit={handleButton}>
           <label htmlFor="task">Task Name:</label>
-          <input className='forminput' type="text" id="task" name="task" placeholder="Enter task..." />
+          <input
+            className='forminput'
+            type="text"
+            id="task"
+            value={taskName}
+            onChange={(e) => setTaskName(e.target.value)}
+            placeholder="Enter task..."
+          />
           <br />
           <label htmlFor="taskDescription">Task description:</label>
-          <input className='forminput' type="text" id="taskDescription" name="taskDescription" placeholder="Enter task description..." />
+          <input
+            className='forminput'
+            type="text"
+            id="taskDescription"
+            value={taskDescription}
+            onChange={(e) => setTaskDescription(e.target.value)}
+            placeholder="Enter task description..."
+          />
           <br />
           <label htmlFor="date">Due Date:</label>
-          <input type="date" id="date" name="date" />
+          <input
+            type="date"
+            id="date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
           <br />
-          <button onClick={handleButton} type="submit" className="submit-button">Add Task</button>
+          <button type="submit" className="submit-button">Add Task</button>
         </form>
       </div>
     </div>

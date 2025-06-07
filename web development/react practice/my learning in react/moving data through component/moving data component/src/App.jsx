@@ -7,23 +7,24 @@ import Display from './Display';
 
 
 function App() {
-  const [textValue, setTextValue] = useState('');
+  const [inputValue, setInputValue] = useState('');  // track input live
+  const [textValue, setTextValue] = useState('');    // track submitted value
 
   const clickEvent = (event) => {
     event.preventDefault();
-    console.log(textValue)
+    setTextValue(inputValue);
+    console.log(inputValue)
   }
 
   const handleChange = (event) => {
-    console.log(event.target.value)
-    setTextValue(event.target.value);
-  };
+    setInputValue(event.target.value)
+  }
 
 
   return (
     <>
     <form>
-      <input id='text' onChange={handleChange} type='text'/>
+      <input onChange={handleChange} id='text' type='text'/>
       <button onClick={clickEvent}>click me</button>
     </form>
 
