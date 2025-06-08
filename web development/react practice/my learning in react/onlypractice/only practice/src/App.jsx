@@ -8,6 +8,8 @@ import Counter from './counter/counter'
 import RealTimeView from './counter/RealTimeView'
 import Showhide from './counter/Showhide'
 import Calc from './counter/Calc'
+import Todo from './counter/Todo'
+import Quote from './counter/Quote'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +22,9 @@ function App() {
     {/* <Counter /> */}
     {/* <RealTimeView /> */}
     {/* <Showhide /> */}
-    <Calc />
+    {/* <Calc /> */}
+    {/* <Todo /> */}
+    <Quote />
     
     </>
   )
