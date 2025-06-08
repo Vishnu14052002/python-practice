@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import ViewTask from './ViewTask';
+import ViewTask, { valuePass } from './ViewTask';
 
 const EnterTaskFun = () => {
   const [inputValue, SetInputValue] = useState("")
@@ -8,11 +8,10 @@ const EnterTaskFun = () => {
     console.log("button is clicked")
     console.log(inputValue)
     console.log("task added")
+    valuePass(inputValue)
   }
 
-  const PassInputFunction = () => {
-    return (<ViewTask value = "test"/>)
-  }
+
 
   return(
     <>
@@ -23,5 +22,7 @@ const EnterTaskFun = () => {
   );
 }
 
+
+
+
 export {EnterTaskFun}
-export {PassInputFunction}
