@@ -13,6 +13,7 @@ import Quote from './counter/Quote'
 import Products from './counter/products/Products'
 import Parent from './counter/liftstates/Parent'
 import ParentContext from './counter/contextAPI/ParentContext'
+import FormValidataion from './counter/formvalidataion/FormValidataion'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,7 +32,8 @@ function App() {
     {/* <ParentComponent /> */}
     {/* <Products /> */}
     {/* <Parent /> */}
-    <ParentContext />
+    {/* <ParentContext /> */}
+    <FormValidataion />
     
     </>
   )
