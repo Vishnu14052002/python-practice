@@ -1,39 +1,45 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
 const Quote = () => {
-  const [orginalData, setOrginalData] = useState([]);
-  const [currentQuote, setCurrentQuote] = useState();
+  const [quotes, setQuotes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [a, setA] = useState(0)
 
   useEffect(() => {
-    fetch("https://dummyjson.com/quotes")
-      .then((response) => {
-        return response.json();
-      })
+    fetch('https://dummyjson.com/quotes')
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setOrginalData(data.quotes);
+        setQuotes(data.quotes);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error fetching quotes:', error);
+        setLoading(false);
       });
   }, []);
 
-  useEffect(() => {
-    console.log(orginalData);
-  }, [orginalData]);
+  if (loading) return <p>Loading quotes...</p>;
+  const firstQuote = quotes;
 
-  orginalData.map((quote) => {
-    console.log(quote.quote);
-  });
   
+  
+
+  const ui = (
+    <>
+    <p>{quotes[a].quote}</p>
+    <button onClick={(e) => {e.preventDefault();setA((prev) => (prev + 1) % quotes.length)}}>next</button>
+    </>
+  );
+
+
   return (
     <div>
-      <h1>quotes</h1>
-      <p>{currentQuote}</p>
-      <button
-        onClick={() => {
-          setCurrentQuote();
-        }}
-      >
-        Next
-      </button>
+      <h1>Quotes</h1>
+      <ul>
+        {
+            firstQuote ? ui : null
+        }
+      </ul>
     </div>
   );
 };
