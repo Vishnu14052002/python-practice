@@ -1,5 +1,16 @@
-function ChildComponent({ text }) {
-    return <p>{text}</p>;
-  }
+import React, { useEffect } from 'react'
 
-export default ChildComponent  
+
+const ChildComponent = (call) => {
+  const message = "hello from child componenttt"
+  useEffect(() => {
+    call.call(message)
+  },[])
+  return (
+    <div>
+
+    </div>
+  )
+}
+
+export default ChildComponent

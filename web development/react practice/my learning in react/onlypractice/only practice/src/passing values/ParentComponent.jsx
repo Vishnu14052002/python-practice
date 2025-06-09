@@ -1,8 +1,22 @@
+import React, { useState } from 'react'
 import ChildComponent from './ChildComponent';
 
-function ParentComponent() {
-  const message = "Hello from Parent";
-  return <ChildComponent text={message} />;
+
+const ParentComponent = () => {
+  const [value,setValue] = useState("");
+
+  const callBack = (message) => {
+    setValue(message)
+  }
+
+  return (
+    <div>
+      <h1>parent component</h1>
+      <ChildComponent call = {callBack}/>
+      <p>{value}</p>
+    </div>
+    
+  )
 }
 
 export default ParentComponent

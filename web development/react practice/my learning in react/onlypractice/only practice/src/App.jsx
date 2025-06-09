@@ -10,6 +10,9 @@ import Showhide from './counter/Showhide'
 import Calc from './counter/Calc'
 import Todo from './counter/Todo'
 import Quote from './counter/Quote'
+import Products from './counter/products/Products'
+import Parent from './counter/liftstates/Parent'
+import ParentContext from './counter/contextAPI/ParentContext'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,7 +27,11 @@ function App() {
     {/* <Showhide /> */}
     {/* <Calc /> */}
     {/* <Todo /> */}
-    <Quote />
+    {/* <Quote /> */}
+    {/* <ParentComponent /> */}
+    {/* <Products /> */}
+    {/* <Parent /> */}
+    <ParentContext />
     
     </>
   )
