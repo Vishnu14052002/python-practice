@@ -6,10 +6,11 @@ export const myContext = createContext();
 
 const ParentContext = () => {
     
-    const value = "Value from parent context"
+    const value = "Value from parent context";
+    const secondData = "second value";
     return (
     <div>
-        <myContext.Provider value={{value}}>
+        <myContext.Provider value={{value,secondData}}>
             <ChildOneContext />
         </myContext.Provider>
     </div>
