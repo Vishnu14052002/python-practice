@@ -1,5 +1,6 @@
 import React, { useState, createContext} from 'react'
 import Cart from './Cart';
+import {Link} from 'react-router-dom';
 
 export const CartItems = createContext();
 
@@ -17,13 +18,23 @@ export const ProductDetails = (prop) => {
     
     return (
         <>
+        
         <img style={{width : "200px"}} src={prop.image}></img>
         <p>{prop.index}</p>
         <h3>{prop.title}</h3>
         <h2>{prop.description}</h2>
+        <Link
+        to="/description"
+        state={{
+          image: prop.image,
+          title: prop.title,
+          description: prop.description,
+        }}>click to see more</Link>
+        <br></br><br></br>
         <button onClick={handleAddtoCart}>{clicked ? "Added" : "Add to cart"}</button>
         <br></br>
         <br></br>
+        
         </>
     );
 };

@@ -3,6 +3,8 @@ import ChildOneContext from './ChildOneContext';
 
 export const myContext = createContext();
 
+export const passingValue = "value passed";
+
 
 const ParentContext = () => {
     

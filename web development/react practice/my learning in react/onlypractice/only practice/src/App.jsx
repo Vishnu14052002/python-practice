@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { StrictMode, useState } from 'react'
 import './App.css'
 import { EnterTaskFun } from './EnterTask'
 import ParentComponent from './passing values/ParentComponent'
@@ -16,9 +16,19 @@ import ParentContext from './counter/contextAPI/ParentContext'
 import FormValidataion from './counter/formvalidataion/FormValidataion'
 import ProductSearch from './counter/productSearch/ProductSearch'
 import Cart from './counter/productSearch/Cart'
+import WithoutMain from './counter/withoutparentpassvalue/WithoutMain'
+import CompTwo from './counter/withoutparentpassvalue/CompTwo'
+import { MessageProvider } from './counter/contextAPI/ContextTwo/MessageContext'
+import Sender from './counter/contextAPI/ContextTwo/Sender'
+import Receiver from './counter/contextAPI/ContextTwo/Receiver'
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import Home from './counter/Routing/Home'
+import About from './counter/Routing/About'
+import ProductDescription from './counter/productSearch/ProductDescription'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
@@ -36,8 +46,17 @@ function App() {
     {/* <Parent /> */}
     {/* <ParentContext /> */}
     {/* <FormValidataion /> */}
-    <ProductSearch />
+    {/* <ProductSearch /> */}
+    {/* <ProductDescription /> */}
     {/* <Cart /> */}
+    {/* <WithoutMain /> */}
+    {/* <CompTwo /> */}
+
+    {/* <MessageProvider>
+      <Sender />
+      <Receiver />
+    </MessageProvider> */}
+
     
     </>
   )
