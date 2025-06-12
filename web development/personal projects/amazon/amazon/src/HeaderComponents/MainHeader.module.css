@@ -1,0 +1,25 @@
+
+
+.maindiv{
+    background-color: #141921;
+    align-items: center;
+    height: 65px;
+    display: flex;
+}
+
+.mainlogo{
+    width: 110px;
+    margin-left: 14px;
+    margin-bottom: -9px;
+}
+
+.address{
+    display: flex;
+    margin-left: 14px;
+}
+
+.addressfont{
+    font-size: 25px;
+    color: white;
+    margin-bottom: -10px;
+}
