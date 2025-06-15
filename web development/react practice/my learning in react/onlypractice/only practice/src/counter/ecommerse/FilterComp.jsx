@@ -1,8 +1,8 @@
 import React, { useState, createContext } from 'react';
 
-export const checkBoxPassing = createContext();
 
-const FilterComp = () => {
+
+const FilterComp = (props) => {
     const [priceRange, setPriceRange] = useState(""); // <-- use one state for all radios
     const [mensCatg, setMensCatg] = useState(false);
     const [womenCatg, setWomenCatg] = useState(false);
@@ -19,7 +19,10 @@ const FilterComp = () => {
                     name="price"
                     value="lessFifty"
                     checked={priceRange === "lessFifty"}
-                    onChange={(e) => setPriceRange(e.target.value)}
+                    onChange={(e) => {
+                        setPriceRange(e.target.value);
+                        props.value(e)
+                    }}
                 />
                 Less than $50
             </label>
@@ -32,7 +35,10 @@ const FilterComp = () => {
                     name="price"
                     value="fiftyToHundred"
                     checked={priceRange === "fiftyToHundred"}
-                    onChange={(e) => setPriceRange(e.target.value)}
+                    onChange={(e) => {
+                        setPriceRange(e.target.value);
+                        props.value(e)
+                    }}
                 />
                 $50 to $100
             </label>
@@ -45,7 +51,10 @@ const FilterComp = () => {
                     name="price"
                     value="moreHundred"
                     checked={priceRange === "moreHundred"}
-                    onChange={(e) => setPriceRange(e.target.value)}
+                    onChange={(e) => {
+                        setPriceRange(e.target.value);
+                        props.value(e)
+                    }}
                 />
                 More than $100
             </label>
