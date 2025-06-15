@@ -16,7 +16,7 @@ const ParentEcommerse = () => {
   const handleFiltersChange = useCallback((newFilters) => {
     setFilterValues(newFilters);
   }, []);
-
+// he
   console.log("FILTER STATE:", filterValues);
 
   return (
