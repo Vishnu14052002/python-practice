@@ -1,6 +1,6 @@
 import React, { useState, createContext } from 'react';
 
-export const checkBox = createContext();
+export const checkBoxPassing = createContext();
 
 const FilterComp = () => {
     const [priceRange, setPriceRange] = useState(""); // <-- use one state for all radios

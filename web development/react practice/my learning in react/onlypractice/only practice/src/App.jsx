@@ -29,6 +29,7 @@ import CartComp from './counter/ecommerse/CartComp'
 import FilterComp from './counter/ecommerse/FilterComp'
 import EProducts from './counter/ecommerse/EProducts'
 import ContextLearningParent from './counter/contextAPI/ContextLearning/ContextLearningParent'
+import ParentEcommerse from './counter/ecommerse/ParentEcommerse'
 
 
 function App() {
@@ -60,10 +61,11 @@ function App() {
       <Sender />
       <Receiver />
     </MessageProvider> */}
-    <ContextLearningParent />
+    {/* <ContextLearningParent /> */}
     {/* <CartComp />
     <FilterComp />
     <EProducts /> */}
+    <ParentEcommerse />
 
     
     </>
