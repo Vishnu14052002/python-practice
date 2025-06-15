@@ -25,6 +25,9 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import Home from './counter/Routing/Home'
 import About from './counter/Routing/About'
 import ProductDescription from './counter/productSearch/ProductDescription'
+import CartComp from './counter/ecommerse/CartComp'
+import FilterComp from './counter/ecommerse/FilterComp'
+import EProducts from './counter/ecommerse/EProducts'
 
 
 function App() {
@@ -56,6 +59,9 @@ function App() {
       <Sender />
       <Receiver />
     </MessageProvider> */}
+    <CartComp />
+    <FilterComp />
+    <EProducts />
 
     
     </>
