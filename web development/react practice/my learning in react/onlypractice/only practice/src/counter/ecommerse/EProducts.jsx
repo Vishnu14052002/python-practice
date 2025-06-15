@@ -13,6 +13,7 @@ const EProducts = () => {
     const finalData = ProductData.map((product, index) => (
         <EProductUI 
             key = {index}
+            title = {product.title}
             image = {product.image}
             price = {product.price}
             description = {product.description}
