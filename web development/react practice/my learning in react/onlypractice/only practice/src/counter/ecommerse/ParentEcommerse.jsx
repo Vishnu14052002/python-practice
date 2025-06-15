@@ -1,34 +1,31 @@
-import React, { createContext, useState } from 'react';
-import CartComp from './CartComp'
-import FilterComp from './FilterComp'
-import EProducts from './EProducts'
-
-
-
-export const checkBoxPassing = createContext();
-
-
-
-
-
-
+import React, { useState, useCallback } from 'react';
+import CartComp from './CartComp';
+import FilterComp from './FilterComp';
+import EProducts from './EProducts';
 
 const ParentEcommerse = () => {
-    const [checkBoxValues, setCheckBoxValues] = useState([]);
+  const [filterValues, setFilterValues] = useState({
+    priceRange: '',
+    mensCatg: false,
+    womenCatg: false,
+    jeweleryCatg: false,
+    electronicsCatg: false,
+  });
 
-    const handlePriceRange = (e) => {
-        setCheckBoxValues(e.target.value)
-    }
+  // Memoize the callback to prevent recreation on every render
+  const handleFiltersChange = useCallback((newFilters) => {
+    setFilterValues(newFilters);
+  }, []);
 
+  console.log("FILTER STATE:", filterValues);
 
-    console.log(checkBoxValues)
-    return (
+  return (
     <div>
-        <CartComp />
-        <FilterComp value = {handlePriceRange}/>
-        <EProducts />
+      <CartComp />
+      <FilterComp onFiltersChange={handleFiltersChange} />
+      <EProducts filters={filterValues} />
     </div>
-    )
-}
+  );
+};
 
-export default ParentEcommerse
+export default ParentEcommerse;

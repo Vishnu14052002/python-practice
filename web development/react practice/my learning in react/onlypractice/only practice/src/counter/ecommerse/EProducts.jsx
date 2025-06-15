@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import EProductUI from './EProductUI';
 
-const EProducts = () => {
+const EProducts = ({ filters }) => {
     const [ProductData, setProductData] = useState([]);
 
     useEffect(() => {
@@ -21,6 +21,11 @@ const EProducts = () => {
     ));
 
     console.log(ProductData)
+
+    useEffect(() => {
+        console.log("Filters from parent:", filters);
+    }, [filters]); // <-- only logs when filters change
+    
 
     return (
     <div>
