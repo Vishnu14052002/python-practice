@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
+
+export const checkBox = createContext();
 
 const FilterComp = () => {
     const [priceRange, setPriceRange] = useState(""); // <-- use one state for all radios

@@ -28,6 +28,7 @@ import ProductDescription from './counter/productSearch/ProductDescription'
 import CartComp from './counter/ecommerse/CartComp'
 import FilterComp from './counter/ecommerse/FilterComp'
 import EProducts from './counter/ecommerse/EProducts'
+import ContextLearningParent from './counter/contextAPI/ContextLearning/ContextLearningParent'
 
 
 function App() {
@@ -59,9 +60,10 @@ function App() {
       <Sender />
       <Receiver />
     </MessageProvider> */}
-    <CartComp />
+    <ContextLearningParent />
+    {/* <CartComp />
     <FilterComp />
-    <EProducts />
+    <EProducts /> */}
 
     
     </>
