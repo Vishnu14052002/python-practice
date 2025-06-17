@@ -12,7 +12,7 @@ const ParentEcommerse = () => {
     electronicsCatg: false,
   });
 
-  // Memoize the callback to prevent recreation on every render
+  // Memoize the callback to prevent recreation on every render relative
   const handleFiltersChange = useCallback((newFilters) => {
     setFilterValues(newFilters);
   }, []);
