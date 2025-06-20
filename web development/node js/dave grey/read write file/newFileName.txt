@@ -1,5 +1,3 @@
-Hello from Dave Gray Node.js tutorial!
-
-just an append
+hello world
 
 hello world
