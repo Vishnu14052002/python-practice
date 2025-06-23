@@ -9,9 +9,12 @@ const PORT = process.env.PORT ||  5003;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+app.use(express.static(path.join(__dirname, '../public')))
+
 app.get('/', (req, res) => {
     res.sendFile (path.join(__dirname, 'public', 'index.html'))
 });
+//
 
 app.listen(PORT, () => {
     console.log(`server started on ${PORT}`)
