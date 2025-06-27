@@ -26,7 +26,7 @@ function divide(num1, num2) {
 }
 
 
-divide(1,2).then((resolve) => {
+divide(1,0).then((resolve) => {
     console.log(resolve)
 }).catch((reject) => {
     console.log(reject)
