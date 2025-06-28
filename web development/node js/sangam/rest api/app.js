@@ -68,6 +68,28 @@ app.put('/update/:id', (req, res) => {
 });
 
 
+
+
+//delete
+
+app.delete('/delete/:id', (req, res) => {
+    const findIndexOfCurrentBook = books.findIndex(item => item.id === parseInt(req.params.id));
+    if(findIndexOfCurrentBook !== -1){
+        const detetedBook = books.splice(findIndexOfCurrentBook,1);
+        res.status(200).json({
+            message: 'book deleted successfully',
+            data : detetedBook[0]
+        })
+    }else{
+        res.status(404).json({
+            message : 'book not found'
+        })
+    }
+});
+
+
+
+
 // post request is creating new data
 app.post('/add', (req, res) => {
     const newBook = {
