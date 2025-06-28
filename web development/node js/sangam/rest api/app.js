@@ -46,10 +46,29 @@ app.get('/get/:id', (req, res) => {
 })
 
 
+//put means update existing data
+
+app.put('/update/:id', (req, res) => {
+    const findCurrentBook = books.find(bookItem => bookItem.id === parseInt(req.params.id));
+    if(findCurrentBook){
+        findCurrentBook.title = req.body.title || findCurrentBook.title;
+
+        res.status(200).json({
+            message : 'book is updated successfully',
+            data :findCurrentBook
+        })
+    }
+    else{
+        res.status(404).json({
+            message : 'book not found'
+        })
+    }
 
 
+});
 
 
+// post request is creating new data
 app.post('/add', (req, res) => {
     const newBook = {
         id: books.length + 1,
