@@ -27,7 +27,12 @@ app.get('/api', (req,res) => {
 app.get('/api/:id', (req, res) => {
     const bookId = req.params.id;
     const book = books.find(u => u.id == bookId);
+    if (!book) {
+        return res.status(404).json({ error: 'Book not found' });
+    }
     res.json(book);
+
+
 });
 
 
