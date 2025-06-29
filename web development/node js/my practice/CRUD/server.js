@@ -4,6 +4,13 @@ const PORT = 3000;
 
 app.use(express.json());
 
+
+app.use((req, res, next) => {
+    const now = new Date().toISOString(); // current time in readable format
+    console.log(`[${now}] ${req.method} ${req.url}`);
+    next(); // move to the next middleware or route
+});
+
 const books = [
     {
         id : 1,
