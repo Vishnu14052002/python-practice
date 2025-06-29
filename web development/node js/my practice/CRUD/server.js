@@ -72,6 +72,18 @@ app.put('/api/:id', (req, res) => {
 })
 
 
+
+// delete request
+app.delete('/api/:id', (req, res) => {
+    const bookId = req.params.id;
+    
+    const bookIndex = books.findIndex((e) => e.id == bookId);
+    const deletedBook = books.splice(bookIndex, 1);
+
+    res.status(200).json(deletedBook);
+})
+
+
 app.listen(PORT, () => {
     console.log('hello world');
 });
