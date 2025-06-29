@@ -54,6 +54,24 @@ app.post('/api', (req, res) => {
 });
 
 
+
+// update -- put request
+app.put('/api/:id', (req, res) => {
+    const bookId = req.params.id;
+    const { name } = req.body;
+
+    if(!name) {
+        return res.status(400).json({error: 'book id not found'});
+    }
+
+    const book = books.find((e) => e.id == bookId);
+
+    book.name = name;
+
+    res.status(400).json(book);
+})
+
+
 app.listen(PORT, () => {
     console.log('hello world');
 });
