@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 
+app.use(express.json());
+
 const books = [
     {
         id : 1,
@@ -31,8 +33,24 @@ app.get('/api/:id', (req, res) => {
         return res.status(404).json({ error: 'Book not found' });
     }
     res.json(book);
+});
 
 
+
+// create -- post request
+app.post('/api', (req, res) => {
+    const { name } = req.body;
+    if(!name){
+        return res.status(400).json({ error: 'Book name is required' });
+    }
+
+    const bookName = {
+        id : books.length + 1,
+        name
+    };
+
+    books.push(bookName);
+    res.status(201).json(bookName);
 });
 
 
