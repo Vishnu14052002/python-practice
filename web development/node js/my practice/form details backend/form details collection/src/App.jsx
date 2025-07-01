@@ -4,30 +4,45 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('')
+
+  const clickEvent = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3000/api/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name_one: input1,
+          name_two: input2,
+        }),
+      });
+  
+      const data = await response.json();
+      console.log(data);
+  
+      if (response.ok) {
+        alert('User saved successfully!');
+      } else {
+        alert('Error saving user.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Server error.');
+    }
+  };
+  
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <form>
+      <input onChange={(e) => {setInput1(e.target.value)}}></input><br></br>
+      <input onChange={(e) => {setInput2(e.target.value)}}></input><br></br>
+      <button onClick={clickEvent}>submit</button>
+    </form>
     </>
   )
 }
