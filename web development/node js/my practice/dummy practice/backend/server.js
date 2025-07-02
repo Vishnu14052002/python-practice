@@ -20,7 +20,7 @@ const userDetailsApi = mongoose.model('userDetailsApi', userDetailsSchema);
 
 
 app.get('/api', async (req, res) => {
-    const userData = await userDetailsApi.find();
+    const userData = await userDetailsApi.find({});
     console.log('this is user details',userData)
     res.json(userData);
 })
