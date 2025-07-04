@@ -29,6 +29,23 @@ app.post('/users',async (req, res) => {
     });
 })
 
+app.post('/postss', async (req, res) => {
+    const id = req.body.id;
+    const password = req.body.name;
+    const user = posts.find(p => p.id == id);
+    if(!user){
+        res.status(400).json({
+            'message' : 'id not found'
+        })
+    }
+    const isMatch = await bcrypt.compare(password,user.name);
+    if (isMatch) {
+        res.send('Login successful');
+    } else {
+        res.status(401).send('Invalid password');
+    }
+})
+
 app.listen(PORT, ()=> {
     console.log('server is running');
 })

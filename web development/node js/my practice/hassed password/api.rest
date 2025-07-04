@@ -1,7 +1,17 @@
-POST http://localhost:3000/users
+# POST http://localhost:3000/users
+# Content-Type : application/json
+
+# {
+#     "name" : "priya",
+#     "id" : 2
+# }
+
+
+
+POST http://localhost:3000/postss
 Content-Type : application/json
 
 {
-    "name" : "1234",
-    "id" : 1
+    "name" : "priyaa",
+    "id" : 2
 }
