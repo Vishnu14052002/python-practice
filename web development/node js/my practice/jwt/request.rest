@@ -1,9 +1,8 @@
-get http://localhost:3000/posts
+# get http://localhost:3000/posts
 
-###
+# ###
 
 post http://localhost:3000/login
-
 Content-Type: application/json
 
 {
