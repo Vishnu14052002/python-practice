@@ -1,13 +1,14 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const app = express();
 app.use(express.json());
 
 const saltRound = 10;
 
-mongoose.connect('mongodb+srv://vishnug14052002:vishnu24@cluster0.guzcoui.mongodb.net/')
+mongoose.connect(process.env.mongoDb)
 .then(() => {console.log('database connected successfully')})
 .catch((err)=> {console.log(err)});
 
@@ -40,7 +41,21 @@ app.post('/register', async (req, res) => {
 })
 
 
+app.post('/login', async (req, res) => {
+    const {email, password} = req.body; 
+    const user = await user_details.findOne({ email });
+    const isMatch = await bcrypt.compare(password, user.password);
+    const token = jwt.sign(email,process.env.my_token)
 
+    console.log(token)
+    if(isMatch){
+        res.status(400).json({
+            'message' : `login successfull ${user.name}`,
+            'token' : token
+        })
+    }
+
+})
 
 
 

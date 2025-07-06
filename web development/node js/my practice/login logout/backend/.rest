@@ -6,3 +6,15 @@ Content-Type: application/json
     "email" : "priya@gmail.com",
     "password" : "V@Priya@@@24"
 }
+
+
+###
+
+
+post http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email" : "vishnug14052002@gmail.com",
+    "password" : "V@Priya@@@24"
+}
