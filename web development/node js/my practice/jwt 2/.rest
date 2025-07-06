@@ -1,4 +1,6 @@
-get http://localhost:3000/posts
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51.pdRMUnVln-jFlnZ3edr-kDcdgC7rkwXucl-jbrnUnes
+
 
 ###
 

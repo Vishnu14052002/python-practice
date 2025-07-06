@@ -1,5 +1,6 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const saltRounds = 10;
 const app = express();
 require('dotenv').config();
@@ -22,7 +23,7 @@ app.get('/users', (req, res) => {
     res.json(users);
 })
 
-app.get('/posts', (req, res) => {
+app.get('/posts', authentication, (req, res) => {
     res.json(posts);
 })
 
@@ -47,8 +48,11 @@ app.post('/login', async (req, res) => {
     console.log(isMatch)
     if(isMatch){
         console.log('login successfull');
+        const token = jwt.sign(name, process.env.my_token_code)
+        console.log(token)
         res.status(200).json({
-            'message' : 'login successfull'
+            'message' : 'login successfull',
+            'token' : token
         })
     }
     else{
@@ -58,6 +62,21 @@ app.post('/login', async (req, res) => {
         })
     }
 })
+
+// middleware
+
+function authentication (req, res, next){
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+    jwt.verify(token, process.env.my_token_code, (err, users) => {
+        if (err) return res.status(403).json({
+            'message' : 'something went wrong'
+        });
+        req.user = users;
+        next();
+    })
+    console.log(authHeader)
+}
 
 app.listen(process.env.PORT, () => {
     console.log('server is running');
