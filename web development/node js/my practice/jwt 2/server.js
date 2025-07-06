@@ -66,7 +66,7 @@ app.post('/login', async (req, res) => {
     }
 })
 
-// middleware
+// middleware usage
 
 function authentication (req, res, next){
     const authHeader = req.headers['authorization'];
