@@ -24,7 +24,10 @@ app.get('/users', (req, res) => {
 })
 
 app.get('/posts', authentication, (req, res) => {
-    res.json(posts);
+    const userName = req.user
+    const actualUser = users.find(r => r.name == userName)
+    console.log(actualUser)
+    res.json(actualUser);
 })
 
 app.post('/register', async (req, res) => {

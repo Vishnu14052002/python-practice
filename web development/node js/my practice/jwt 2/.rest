@@ -1,5 +1,5 @@
 GET http://localhost:3000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51.pdRMUnVln-jFlnZ3edr-kDcdgC7rkwXucl-jbrnUnes
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWE.IXJa1BHwG2P5v_Q7a2qKxdEgeuGtD155Tqwu_C1XCjE
 
 
 ###
@@ -13,7 +13,7 @@ post http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "name" : "vishnu",
+    "name" : "priya",
     "password" : "V@Priya@@@24"
 }
 
@@ -23,6 +23,6 @@ post http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "name" : "vishnu",
+    "name" : "priya",
     "password" : "V@Priya@@@24"
 }
