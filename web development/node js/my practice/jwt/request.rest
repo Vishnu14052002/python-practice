@@ -1,5 +1,5 @@
 get http://localhost:3000/posts
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoidmlzaG51IiwiaWF0IjoxNzUxNzYzNzA0LCJleHAiOjE3NTE3NjczMDR9.RyV8p3TeSWYAMADj-bGxZmmFRlnNlaYGDkJdXEJnGY4
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoicHJpeWEiLCJpYXQiOjE3NTE3NjQzMTd9.j9RxGcTQjVetIHIfJRbt3i-xHGZvBcy9R42mUWY48cI
 
 
 
@@ -9,5 +9,5 @@ post http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "name" : "vishnu"
+    "name" : "priya"
 }

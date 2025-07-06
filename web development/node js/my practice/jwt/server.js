@@ -10,6 +10,10 @@ const posts = [
     {
         name : 'vishnu',
         label : 1
+    },
+    {
+        name : 'priya',
+        label : 2
     }
 ]
 
