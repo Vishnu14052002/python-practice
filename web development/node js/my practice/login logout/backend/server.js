@@ -64,9 +64,10 @@ app.post('/login', async (req, res) => {
 })
 
 app.get('/tasks',authentication , async (req, res) => {
-    const userTask = await user_details.findOne({ email: req.user.email })
+    const email = req.user;
+    const user = await user_details.findOne({email})
 
-    res.json(userTask.tasks);
+    res.json(user.tasks);
 })
 
 app.post('/uploadtask', authentication, async (req, res) => {

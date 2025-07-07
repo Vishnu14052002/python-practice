@@ -15,7 +15,7 @@ post http://localhost:3000/login
 Content-Type: application/json
 
 {
-    "email" : "vishnug14052002@gmail.com",
+    "email" : "priya@gmail.com",
     "password" : "V@Priya@@@24"
 }
 
@@ -24,17 +24,17 @@ Content-Type: application/json
 
 
 GET http://localhost:3000/tasks
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.bh0tT6fmiHtGMBDuy3-5P29KmfDjuHON9RSWgdj5YDg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.myC_BUQ-zzenLPLAHgPFdEXu-leqw7mLWib9lXUw9rs
 Content-Type: application/json
 
 ###
 
 
 Post http://localhost:3000/uploadtask
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.bh0tT6fmiHtGMBDuy3-5P29KmfDjuHON9RSWgdj5YDg
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.myC_BUQ-zzenLPLAHgPFdEXu-leqw7mLWib9lXUw9rs
 Content-Type: application/json
 
 {
-    "taskName" : "my first task",
+    "taskName" : "priya first task",
     "deadline" : "today"
 }
