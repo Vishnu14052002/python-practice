@@ -10,8 +10,24 @@ const Home = () => {
     const [registerPassword, setRegisterPassword] = useState('');
     // console.log(registerUserName)
 
-    function handleLogin(e){
+    async function handleLogin(e){
         e.preventDefault();
+
+        try{
+            const res = await fetch('http://localhost:3000/login', {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ loginUserName, loginPassword }),
+            })
+
+            const data = await res.json();
+            console.log(data)
+        }
+        catch(err){
+            console.log(err)
+        }
     }
 
     function handleRegister(e){
