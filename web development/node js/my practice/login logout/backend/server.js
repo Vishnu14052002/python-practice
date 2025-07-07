@@ -15,7 +15,13 @@ mongoose.connect(process.env.mongoDb)
 const usersSchema = new mongoose.Schema({
     name : String,
     email : String,
-    password : String
+    password : String,
+    tasks : [
+        {
+            task: String,
+            deadline: String
+        }
+    ]
 })
 
 const user_details = mongoose.model('user_details', usersSchema)
@@ -56,6 +62,46 @@ app.post('/login', async (req, res) => {
     }
 
 })
+
+app.get('/tasks',authentication , async (req, res) => {
+    const userTask = await user_details.findOne({ email: req.user.email })
+
+    res.json(userTask.tasks);
+})
+
+app.post('/uploadtask', authentication, async (req, res) => {
+    const {taskName, deadline} = req.body;
+    const email = req.user;
+    try {
+        const user = await user_details.findOne({ email });
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        user.tasks.push({ task: taskName, deadline });
+        await user.save();
+
+        res.json({ message: 'Task added successfully', tasks: user.tasks });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ message: 'Server error' });
+    }
+
+})
+
+
+function authentication(req, res, next){
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+    jwt.verify(token, process.env.my_token, (err, users) => {
+        if(err) return res.status(403).json({
+            'message' : 'something went wrong'
+        })
+        req.user = users;
+        next();
+    })
+}
 
 
 
