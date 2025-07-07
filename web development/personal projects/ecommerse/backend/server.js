@@ -3,6 +3,9 @@ const app = express();
 require('dotenv').config();
 
 
+const productAPI = require('./all routes/product route/productAPI');
+app.use('/api',productAPI)
+
 
 
 
