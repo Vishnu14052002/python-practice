@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { use, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const navigate = useNavigate();
     const [loginClick, setLoginClick] = useState(false);
     const [registerClick, setRegisterClick] = useState(false);
     const [loginUserName, setLoginUserName] = useState('');
@@ -8,7 +10,9 @@ const Home = () => {
     const [registerUserName, setRegisterUserName] = useState('');
     const [registerEmail, setRegisterEmail] = useState('');
     const [registerPassword, setRegisterPassword] = useState('');
-    // console.log(registerUserName)
+    const [loginState, setLoginState] = useState(false);
+    const [userToken, setUserToken] = useState('')
+    console.log(loginState)
 
     async function handleLogin(e){
         e.preventDefault();
@@ -19,11 +23,22 @@ const Home = () => {
                 headers: {
                   'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ loginUserName, loginPassword }),
+                body: JSON.stringify({
+                    "email" : loginUserName,
+                    "password" : loginPassword
+                }),
             })
 
             const data = await res.json();
+            setUserToken(data.token)
+            localStorage.setItem('token', data.token);
             console.log(data)
+            if(data.message == 'login successfull'){
+                navigate('/tasks');
+                setLoginState(true);
+            }
+
+
         }
         catch(err){
             console.log(err)

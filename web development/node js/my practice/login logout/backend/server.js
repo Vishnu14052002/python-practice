@@ -43,7 +43,7 @@ app.post('/register', async (req, res) => {
     await newUser.save();
 
 
-    res.status(400).json({
+    res.status(200).json({
         'message' : 'registration successfull'
     })
 })
@@ -57,8 +57,8 @@ app.post('/login', async (req, res) => {
 
     console.log(token)
     if(isMatch){
-        res.status(400).json({
-            'message' : `login successfull ${user.name}`,
+        res.status(200).json({
+            'message' : `login successfull`,
             'token' : token
         })
     }
@@ -69,7 +69,7 @@ app.get('/tasks',authentication , async (req, res) => {
     const email = req.user;
     const user = await user_details.findOne({email})
 
-    res.json(user.tasks);
+    res.json(user);
 })
 
 app.post('/uploadtask', authentication, async (req, res) => {
