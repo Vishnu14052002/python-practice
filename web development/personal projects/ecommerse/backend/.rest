@@ -27,6 +27,11 @@ post http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "emailPhone" : "vishnug14052002@gmail.com",
+    "emailPhone" : "priya@gmail.com",
     "password" : "V@Priya@@@24"
 }
+
+
+### get cart details
+get http://localhost:3000/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.8z-UBFdU1iYGCnO7TO68o6B0a8pa1qkQEWvXKeqgdHE

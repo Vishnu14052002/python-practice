@@ -26,6 +26,10 @@ app.use('/user', registerUser);
 const loginUser = require('./routes/userauth/loginUser');
 app.use('/user', loginUser)
 
+//cart details api
+const cartItems = require('./routes/dbProductroutes/cartItems');
+app.use('/api', cartItems);
+
 
 app.listen(process.env.PORT, () => {
     console.log(`server is running ${process.env.PORT}`);
