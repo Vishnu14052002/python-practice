@@ -22,6 +22,11 @@ const registerUser = require('./routes/userauth/registerUser');
 app.use('/user', registerUser);
 
 
+//login user route
+const loginUser = require('./routes/userauth/loginUser');
+app.use('/user', loginUser)
+
+
 app.listen(process.env.PORT, () => {
     console.log(`server is running ${process.env.PORT}`);
 })
