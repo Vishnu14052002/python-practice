@@ -4,3 +4,19 @@ get http://localhost:3000/api/data
 ###
 
 get http://localhost:3000/api/data/4
+
+
+### post
+
+
+post http://localhost:3000/user/register
+Content-Type: application/json
+
+{
+    "name" : "vishnu",
+    "email" : "vishnug14052002@gmail.com",
+    "number" : "07587675040",
+    "address" : "number 4, brickfields road, south Woodham Ferrers CM3 5XB",
+    "password" : "V@Priya@@@24",
+    "cartList" : []
+}

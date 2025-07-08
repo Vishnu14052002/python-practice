@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 const mongoose = require('./database connection/dbConnection');
 app.use(express.json());
 
@@ -16,11 +17,15 @@ app.use('/api', productsGetApi);
 const productsGetWithId = require('./routes/dbProductroutes/productsGetWithId');
 app.use('/api', productsGetWithId);
 
+//register users route
+const registerUser = require('./routes/userauth/registerUser');
+app.use('/user', registerUser);
 
 
-app.listen(3000, () => {
-    console.log('server is running');
+app.listen(process.env.PORT, () => {
+    console.log(`server is running ${process.env.PORT}`);
 })
+
 
 
 
