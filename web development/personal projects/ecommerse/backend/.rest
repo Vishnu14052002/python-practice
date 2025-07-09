@@ -27,25 +27,25 @@ post http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "emailPhone" : "vishnug14052002@gmail.com",
+    "emailPhone" : "07305304724",
     "password" : "V@Priya@@@24"
 }
 
 
 ### get cart details
 get http://localhost:3000/api/cart
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.7hyGkTtGD22vQVDUv3Q69BvI6JjxnsjHuYhCb5RPd1g
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.8z-UBFdU1iYGCnO7TO68o6B0a8pa1qkQEWvXKeqgdHE
 
 
 
 ### post user cart items
 
 post http://localhost:3000/user/postCartItems
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.7hyGkTtGD22vQVDUv3Q69BvI6JjxnsjHuYhCb5RPd1g
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.8z-UBFdU1iYGCnO7TO68o6B0a8pa1qkQEWvXKeqgdHE
 Content-Type: application/json
 
 {
-    "id" : 30
+    "id" : 26
 }
 
 
@@ -53,9 +53,9 @@ Content-Type: application/json
 ### delete user cart items
 
 post http://localhost:3000/user/deleteCartItems
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.7hyGkTtGD22vQVDUv3Q69BvI6JjxnsjHuYhCb5RPd1g
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.8z-UBFdU1iYGCnO7TO68o6B0a8pa1qkQEWvXKeqgdHE
 Content-Type: application/json
 
 {
-    "id" : 30
+    "id" : 23
 }

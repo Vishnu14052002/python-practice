@@ -20,8 +20,11 @@ router.post('/deleteCartItems', authentication, async (req, res) => {
         if(actualUserEmail){
             const index = actualUserEmail.cart.findIndex(p => p.id == id);
             if(index !== -1) {
-            actualUserEmail.cart.splice(index, 1);
-            await actualUserEmail.save();
+                actualUserEmail.cart.splice(index, 1);
+                await actualUserEmail.save();
+                res.status(200).json({
+                    'message' : 'item deleted successfully'
+                })
             }
             else{
                 res.status(400).json({
@@ -33,7 +36,19 @@ router.post('/deleteCartItems', authentication, async (req, res) => {
 
         }
         else if(actualUserPhone){
-            console.log(actualUserPhone)
+            const index = actualUserPhone.cart.findIndex(p => p.id == id);
+            if(index !== -1) {
+                actualUserPhone.cart.splice(index, 1);
+                await actualUserPhone.save();
+            }
+            else{
+                res.status(400).json({
+                    'message' : 'item not exist in cart'
+                })
+            }
+            
+            console.log(actualUserPhone.cart)
+
         }
         else{
             res.status(400).json({
