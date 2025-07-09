@@ -14,15 +14,32 @@ router.post('/postCartItems', authentication, async (req, res) => {
     try{
         const data = await User.find(); 
         const productData = await Product.find();
-        console.log(productData[id-1])
+        console.log(productData[id-1].images)
         const actualUserEmail = data.find(p => p.email == user);
         const actualUserPhone = data.find(p => p.number == user);
         if(actualUserEmail){
             console.log(actualUserEmail.cart)
-
+            const cartItemList = {
+                "id": productData[id-1].id,
+                "title": productData[id-1].title,
+                "price": productData[id-1].price,
+                "images": productData[id-1].images[0]
+            }
+            console.log(cartItemList)
+            actualUserEmail.cart.push(cartItemList);
+            await actualUserEmail.save();
         }
         else if(actualUserPhone){
-            console.log(actualUserPhone)
+            console.log(actualUserPhone.cart)
+            const cartItemList = {
+                "id": productData[id-1].id,
+                "title": productData[id-1].title,
+                "price": productData[id-1].price,
+                "images": productData[id-1].images[0]
+            }
+            console.log(cartItemList)
+            actualUserPhone.cart.push(cartItemList);
+            await actualUserPhone.save();
         }
         else{
             res.status(400).json({
