@@ -45,5 +45,5 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.7h
 Content-Type: application/json
 
 {
-    "id" : 3
+    "id" : 6
 }
