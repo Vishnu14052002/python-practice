@@ -30,6 +30,10 @@ app.use('/user', loginUser)
 const cartItems = require('./routes/dbProductroutes/cartItems');
 app.use('/api', cartItems);
 
+// post cart items with user matched cart
+const postCartItems = require('./routes/cartCrud/postCartItems');
+app.use('/user', postCartItems)
+
 
 app.listen(process.env.PORT, () => {
     console.log(`server is running ${process.env.PORT}`);

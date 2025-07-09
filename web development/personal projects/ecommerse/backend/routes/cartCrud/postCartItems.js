@@ -1,43 +1,41 @@
+const express = require('express');
 const authentication = require('../../middleware/userAuthMiddleware');
-const express= require('express');
 const router = express.Router();
 const app = express();
 app.use(express.json());
 const User = require('../../database connection/userSchema');
+const Product = require('../../database connection/productSchema');
 
-
-router.get('/cart', authentication, async (req, res) => {
+router.post('/postCartItems', authentication, async (req, res) => {
     const user = req.user;
-    // console.log(user);
+    const {id} = req.body;
+    // const numericId = Number(id);
+    console.log(id);
     try{
         const data = await User.find(); 
+        const productData = await Product.find();
+        console.log(productData[id-1])
         const actualUserEmail = data.find(p => p.email == user);
         const actualUserPhone = data.find(p => p.number == user);
         if(actualUserEmail){
-            console.log(actualUserEmail)
-            res.status(200).json({
-                'greetings' : `welcome ${actualUserEmail.name}`,
-                'cartItems' : actualUserEmail.cart
-            })
+            console.log(actualUserEmail.cart)
+
         }
         else if(actualUserPhone){
             console.log(actualUserPhone)
-            res.status(200).json({
-                'greetings' : `welcome ${actualUserPhone.name}`,
-                'cartItems' : actualUserPhone.cart
-            })
         }
         else{
             res.status(400).json({
-                'message' : 'please login to see cart items'
+                'message' : 'please login to see cart itemsss'
             })
         }
     }
     catch(err){
+        console.log(err);
         res.status(400).json({
-            'message' : 'please login to see cart items'
+            'message' : 'please login to see cart itemssss'
         })
     }
 })
 
-module.exports = router
+module.exports = router;

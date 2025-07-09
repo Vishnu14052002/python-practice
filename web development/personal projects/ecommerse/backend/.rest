@@ -27,11 +27,23 @@ post http://localhost:3000/user/login
 Content-Type: application/json
 
 {
-    "emailPhone" : "07587675040",
+    "emailPhone" : "vishnug14052002@gmail.com",
     "password" : "V@Priya@@@24"
 }
 
 
 ### get cart details
 get http://localhost:3000/api/cart
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.cHJpeWFAZ21haWwuY29t.8z-UBFdU1iYGCnO7TO68o6B0a8pa1qkQEWvXKeqgdHE
+
+
+
+### post user cart items
+
+post http://localhost:3000/user/postCartItems
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dmlzaG51ZzE0MDUyMDAyQGdtYWlsLmNvbQ.7hyGkTtGD22vQVDUv3Q69BvI6JjxnsjHuYhCb5RPd1g
+Content-Type: application/json
+
+{
+    "id" : 1
+}
