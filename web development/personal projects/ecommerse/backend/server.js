@@ -34,6 +34,10 @@ app.use('/api', cartItems);
 const postCartItems = require('./routes/cartCrud/postCartItems');
 app.use('/user', postCartItems)
 
+// delete cart items with user matched cart
+const deleteCartItems = require('./routes/cartCrud/deleteCartItems');
+app.use('/user', deleteCartItems)
+
 
 app.listen(process.env.PORT, () => {
     console.log(`server is running ${process.env.PORT}`);

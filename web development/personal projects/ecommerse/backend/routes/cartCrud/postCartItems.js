@@ -37,16 +37,23 @@ router.post('/postCartItems', authentication, async (req, res) => {
             })
         }
         else if(actualUserPhone){
-            // console.log(actualUserPhone.cart)
+            const exists = actualUserPhone.cart.some(i => i.id == id);
+            console.log(exists)
+            if (exists) {
+                return res.status(400).json({ message: 'item already exists' });
+            }
             const cartItemList = {
                 "id": productData[id-1].id,
                 "title": productData[id-1].title,
                 "price": productData[id-1].price,
                 "images": productData[id-1].images[0]
             }
-            // console.log(cartItemList)
-            // actualUserPhone.cart.push(cartItemList);
-            // await actualUserPhone.save();
+            console.log(cartItemList)
+            actualUserPhone.cart.push(cartItemList);
+            await actualUserPhone.save();
+            res.status(200).json({
+                'message' : 'data saved successfully in cart'
+            })
         }
         else{
             res.status(400).json({
