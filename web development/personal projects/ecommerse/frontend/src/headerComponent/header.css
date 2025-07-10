@@ -1,0 +1,51 @@
+.maindiv{
+    background-color: #101319;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 95px;
+
+}
+
+.mainlogo{
+    width: 100px;
+    margin-left: 10px;
+}
+
+.deliverylogo{
+    color: white;
+    font-size: 30px;
+
+}
+
+.deliveryadderess{
+    display: flex;
+    margin-left: 10px;
+}
+
+.addressfetch{
+    color: white;
+}
+
+.searchbar{
+    height: 25px;
+    margin-left: 10px;
+    width: 60%;
+}
+
+.accounts{
+    color: white;
+    display: flex;
+}
+
+.dropdownarrow{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.carticon{
+    color: white;
+    font-size: 50px;
+    margin-right: 10px;
+}
