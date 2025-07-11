@@ -9,6 +9,7 @@ import { CgShoppingCart } from "react-icons/cg";
 const Header = () => {
     const userAdderss = 'chelmsford';
     const userName = 'vishnu';
+    const userLoggedin = false;
     return (
     <div className='maindiv'>
 
@@ -29,11 +30,19 @@ const Header = () => {
         </div>
 
         <div className="accounts">
-            <div className="accountstop">
-                <p>hello {userName}</p>
-                <h3>accounts and list</h3>
-            </div>
-            <IoMdArrowDropdown className='dropdownarrow'/>
+            {userLoggedin ? (
+                <>
+                    <div className="accountstop">
+                    <p>hello {userName}</p>
+                    <h3>accounts and list</h3>
+                    </div>
+                    <IoMdArrowDropdown className='dropdownarrow'/>
+                </>
+            ): 
+            <>
+                <h4>login / register</h4>
+            </>
+            }
         </div>
 
         <div className="cart">

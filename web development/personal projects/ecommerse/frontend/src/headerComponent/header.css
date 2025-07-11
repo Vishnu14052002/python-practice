@@ -31,7 +31,11 @@
 .searchbar{
     height: 25px;
     margin-left: 10px;
-    width: 60%;
+    width: 80%;
+}
+
+.searchbar1{
+    width: 65%;
 }
 
 .accounts{
