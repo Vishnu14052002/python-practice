@@ -76,8 +76,143 @@
     width: 30px;
 }
 
+.authWrapper{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.registerSuma{
+    display: flex;
+    justify-content: center;
+}
+
+.RegisterMainModel {
+    position: relative;
+    padding-top: 2rem; /* give space for the icon */
+  }
+  
+  /* Heading container */
+  .registerSuma {
+    position: relative;
+    text-align: center; /* center the h2 inside */
+    margin-bottom: 1rem;
+  }
+  
+  /* Heading centered */
+  .RegisterModel {
+    margin: 0;
+    font-size: 2rem;
+    color: #111827;
+  }
+  
+  /* Close icon in top-right corner */
+  .RegisterModelCloseIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .RegisterModelCloseIcon:hover {
+    color: #111827;
+  }
+  
 
 
+
+
+.loginMainModel, .RegisterMainModel {
+  background-color: #ffffff;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Headings */
+.loginModel, .RegisterModel {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #111827;
+}
+
+/* Input Fields */
+form input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Button Style */
+.formButton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #6366f1;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.formButton:hover {
+  background-color: #4f46e5;
+}
+
+
+.loginMainModel {
+    position: relative;
+    padding-top: 2rem; /* room for the icon */
+  }
+  
+  /* Heading + Close icon container */
+  .loginSuma {
+    position: relative;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  /* Heading centered */
+  .loginModel {
+    margin: 0;
+    font-size: 2rem;
+    color: #111827;
+  }
+  
+  /* Close icon in top-right corner */
+  .loginModelCloseIcon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .loginModelCloseIcon:hover {
+    color: #111827;
+  }
+  
 
 
 @media only screen and (min-width: 300px) and (max-width: 600px){
@@ -92,4 +227,16 @@
     .maindiv{
         height: 75px;
     }
+
+    .loginMainModel, .RegisterMainModel {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+        width: 80%;
+        max-width: 90%;
+        margin: 1rem auto;
+      }
+    
+      .loginModel, .RegisterModel {
+        font-size: 1.5rem;
+      }
 }
