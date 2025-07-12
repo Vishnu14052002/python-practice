@@ -11,10 +11,11 @@ import { IoCloseSharp } from "react-icons/io5";
 const Header = () => {
     const userAdderss = 'chelmsford';
     const userName = 'vishnu';
-    const [userLoggedin, setUserLoggedIn] = useState(false);
+    const [userLoggedin, setUserLoggedIn] = useState(true);
     const cartItemNumber = 2;
     const [showRegister, setShowRegister] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const [dropdownarrow, setDropdownarrow] = useState(false);
     const login = (
         <div className="loginMainModel">
           <div className="loginSuma">
@@ -61,13 +62,16 @@ const Header = () => {
                 <img className='mainlogo' src='../../src/assets/logo.png' alt='logo'></img>
             </div>
 
-            <div className="deliveryadderess">
-                <CiLocationOn className='deliverylogo'/>
-                <div className="addressfetch">
-                    <p>deliver to {userName}</p>
-                    <p>{userAdderss}</p>
-                </div>
-            </div>
+            {userLoggedin && 
+                        <div className="deliveryadderess">
+                        <CiLocationOn className='deliverylogo'/>
+                        <div className="addressfetch">
+                            <p>deliver to {userName}</p>
+                            <p>{userAdderss}</p>
+                        </div>
+                    </div>
+            }
+
 
             <div className="searchbar">
                 <input className='searchbar1' placeholder='search products'></input>
@@ -81,7 +85,7 @@ const Header = () => {
                         <p>hello {userName}</p>
                         <h3>accounts and list</h3>
                         </div>
-                        <IoMdArrowDropdown className='dropdownarrow'/>
+                        <IoMdArrowDropdown onClick={() => setDropdownarrow(true)} className='dropdownarrow'/>
                     </>
                 ): 
                 <>
