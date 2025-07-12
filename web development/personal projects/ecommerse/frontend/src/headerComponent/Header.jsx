@@ -4,12 +4,14 @@ import '../../src/assets/logo.png'
 import { CiLocationOn } from "react-icons/ci";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { CgShoppingCart } from "react-icons/cg";
+import { FaSearch } from "react-icons/fa";
 
 
 const Header = () => {
     const userAdderss = 'chelmsford';
     const userName = 'vishnu';
     const userLoggedin = false;
+    const cartItemNumber = 2;
     return (
     <div className='maindiv'>
 
@@ -27,6 +29,7 @@ const Header = () => {
 
         <div className="searchbar">
             <input className='searchbar1' placeholder='search products'></input>
+            <FaSearch className='searchIcon'/>
         </div>
 
         <div className="accounts">
@@ -46,7 +49,8 @@ const Header = () => {
         </div>
 
         <div className="cart">
-        <CgShoppingCart className='carticon'/>
+            <p className='cartItemNumber'>{cartItemNumber}</p>
+            <CgShoppingCart className='carticon'/>
         </div>
     </div>
     )
