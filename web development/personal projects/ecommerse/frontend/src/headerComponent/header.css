@@ -55,7 +55,9 @@
 .carticon{
     color: white;
     font-size: 50px;
-    margin-right: 10px;
+    margin-right: 20px;
+    position: relative;
+    top: -8px;
 }
 
 .searchIcon{
@@ -68,6 +70,10 @@
 
 .cartItemNumber{
     color: white;
+    position: relative;
+    top: 26px;
+    right: -23px;
+    width: 30px;
 }
 
 
