@@ -93,7 +93,7 @@ const Header = () => {
                 </>
                 }
             </div>
-{/* commend*/}
+{/* commendss*/}
             <div className="cart">
                 <p className='cartItemNumber'>{cartItemNumber}</p>
                 <CgShoppingCart className='carticon'/>
