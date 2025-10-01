@@ -9,6 +9,7 @@ class Solution(object):
             if prices[i] < min:
                 min = prices[i]
         return profit
+        
             
 
 
