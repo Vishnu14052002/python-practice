@@ -1,8 +1,7 @@
 class Solution(object):
     def merge(self, nums1, m, nums2, n):
-        d_nums1 = nums1[:m]
-        print(d_nums1)
-   
+        count = 0
+           
 
 
 
