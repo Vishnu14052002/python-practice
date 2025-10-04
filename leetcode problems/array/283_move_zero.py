@@ -8,6 +8,10 @@ class Solution(object):
                 x += 1
                 print(i,x)
             print(nums)
+        print(x)
+        for i in range(x, len(nums)):
+            nums[i] = 0
+            print(nums)
 
 
 
