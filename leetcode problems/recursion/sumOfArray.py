@@ -1,6 +1,9 @@
 def sumOfArray(n, arr):
     if n == 0: return arr[0]
-    return arr[n] + sumOfArray(n-1, arr)
+    if arr[n] % 2 == 0:
+        pass
+    else:
+        return arr[n] + sumOfArray(n-1, arr)
     
 
 
