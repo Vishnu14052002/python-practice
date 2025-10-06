@@ -1,9 +1,11 @@
-def sumOfN(num):
-    if num == 0: return
-    print(num)
-    num -= 1
-    sumOfN(num)
+
+def sumOfN(x,num):
+    if x == num: return
+    print(x)
+    x += 1
+    sumOfN(x, num)
+
 
 num = 10
-sumOfN(num)
+sumOfN(0,num)
     
