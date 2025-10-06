@@ -3,6 +3,6 @@ def factorial(num):
     return num * factorial(num - 1)
 
 
-num = 5
+num = 3
 result = factorial(num)
 print(result)
