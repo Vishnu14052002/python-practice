@@ -1,7 +1,10 @@
 class Solution(object):
     def fib(self, n):
-        print(n)
+        if n <= 1: return n
+        # if n == 1: return 1
+        return self.fib(n - 2) + self.fib(n-1)
 
 obj = Solution()
 n = 4
-obj.fib(n)
+result = obj.fib(n)
+print(result)
