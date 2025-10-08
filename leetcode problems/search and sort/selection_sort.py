@@ -13,4 +13,3 @@ class Solution(object):
 obj = Solution()
 nums = [5,1,1,2,0,0]
 result = obj.sortArray(nums)
-print(result)
