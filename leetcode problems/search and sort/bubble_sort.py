@@ -7,7 +7,7 @@ for i in range(len(arr) - 1):
         if arr[j] > arr[j+1]:
             arr[j], arr[j+1] = arr[j+1], arr[j]
             isSwap = True
-            print(i, j)
+            print(arr)
     if isSwap == False:
         break
-    print(arr)
+    # print(arr)
