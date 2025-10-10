@@ -1,12 +1,18 @@
-class Solution(object):
-    def merge(self, nums1, m, nums2, n):
-        
+def merge(left, right):
+    i = 0
+    j = 0
+    new_arr = []
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            new_arr.append(left[i])
+            i += 1
+        else:
+            new_arr.append(right[j])
+            j += 1
+    new_arr = [*new_arr, *left[i:], *right[j:]]
+    return new_arr
 
-            
-
-nums1 = [1,2,3,0,0,0] 
-m = 3 
-nums2 = [2,5,6] 
-n = 3
-obj = Solution()
-obj.merge(nums1, m, nums2, n)
+left = [2,5,9,10] 
+right = [1,3,6,8]
+result = merge(left, right)
+print(result)
