@@ -19,6 +19,12 @@ class SinglyLL:
         nb = Node(data)
         nb.next = self.head
         self.head = nb
+    def insertion_at_end(self, data):
+        ne = Node(data)
+        a = self.head
+        while a.next is not None:
+            a = a.next
+        a.next = ne
 
     
 sl = SinglyLL()
@@ -33,4 +39,6 @@ n3.next = n4
 
 sl.traversal()
 sl.insertion(1)
+sl.traversal()
+sl.insertion_at_end(50)
 sl.traversal()
