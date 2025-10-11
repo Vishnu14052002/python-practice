@@ -30,10 +30,21 @@ class SinglyLL:
         a = self.head
         for i in range(position-1):
             a = a.next
-            print('a', a.data)
-            nis.next = a.next
-            a.next = nis
+        nis.next = a.next
+        a.next = nis
         
+    def deletion_at_beginning(self):
+        s1 = self.head
+        self.head = s1.next
+        s1.head = None
+
+    def deletion_at_end(self):
+        prev = self.head
+        s1 = self.head.next
+        while s1.next is not None:
+            s1 = s1.next
+            prev = prev.next
+        prev.next = None
 
     
 sl = SinglyLL()
@@ -51,5 +62,9 @@ sl.insertion(1)
 sl.traversal()
 sl.insertion_at_end(50)
 sl.traversal()
-sl.insertion_at_specific_index(15, 2)
+sl.insertion_at_specific_index(5, 0)
+sl.traversal()
+sl.deletion_at_beginning()
+sl.traversal()
+sl.deletion_at_end()
 sl.traversal()
