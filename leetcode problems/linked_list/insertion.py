@@ -25,6 +25,15 @@ class SinglyLL:
         while a.next is not None:
             a = a.next
         a.next = ne
+    def insertion_at_specific_index(self, data, position):
+        nis = Node(data)
+        a = self.head
+        for i in range(position-1):
+            a = a.next
+            print('a', a.data)
+            nis.next = a.next
+            a.next = nis
+        
 
     
 sl = SinglyLL()
@@ -41,4 +50,6 @@ sl.traversal()
 sl.insertion(1)
 sl.traversal()
 sl.insertion_at_end(50)
+sl.traversal()
+sl.insertion_at_specific_index(15, 2)
 sl.traversal()
