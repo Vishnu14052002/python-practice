@@ -46,7 +46,7 @@ class SinglyLL:
             prev = prev.next
         prev.next = None
 
-# commits
+# co
 sl = SinglyLL()
 n1 = Node(10)
 sl.head = n1
