@@ -1,0 +1,87 @@
+class Node:
+    def __init__(self, data):
+        self.val = data
+        self.next = None
+
+class MyLinkedList:
+
+    def __init__(self):
+        self.head = None
+        
+
+    # def get(self, index: int) -> int:
+        
+
+    def addAtHead(self, val: int) -> None:
+        addAtHead = Node(val)
+        addAtHead.next = self.head
+        self.head = addAtHead
+    
+    def traversal(self):
+        s1 = self.head
+        while s1 is not None:
+            print(s1.val)
+            s1 = s1.next
+        
+        
+
+    def addAtTail(self, val: int) -> None:
+        addAtTail = Node(val)
+        if self.head is None:
+            addAtTail.next = self.head
+            self.head = addAtTail
+        else:
+            s1 = self.head.next
+            prev = self.head
+            while s1 is not None:
+                # print(s1.val)
+                s1 = s1.next
+                prev = prev.next
+            prev.next = addAtTail
+
+        
+
+    def addAtIndex(self, index: int, val: int) -> None:
+        if index < 0:
+            print(-1)
+
+        if index == 0:
+            addAtIndex = Node(val)
+            addAtIndex.next = self.head
+            self.head = addAtIndex
+        
+        prev = self.head
+        s1 = self.head.next
+        for i in range(index-1):
+            s1 = s1.next
+            prev = prev.next
+            if s1 == None:
+                print('je')
+                return -1
+
+
+
+        addAtIndex = Node(val)
+        addAtIndex.next = s1
+        prev.next = addAtIndex
+
+
+        
+        
+            
+        
+
+    # def deleteAtIndex(self, index: int) -> None:
+
+
+myLinkedList = MyLinkedList()
+myLinkedList.addAtHead(8)
+myLinkedList.addAtHead(6)
+myLinkedList.addAtHead(3)
+myLinkedList.addAtHead(1)
+# myLinkedList.addAtTail(3)
+myLinkedList.addAtIndex(10, 5)
+# myLinkedList.get(1)            
+# myLinkedList.deleteAtIndex(1)    
+# myLinkedList.get(1)   
+myLinkedList.traversal()    
