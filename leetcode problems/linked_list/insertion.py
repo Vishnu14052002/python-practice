@@ -57,6 +57,25 @@ class SinglyLL:
             ahead = ahead.next
         prev.next = ahead
         s1.next = None
+
+    def get(self, index: int) -> int:
+        # Handle invalid index
+        if index < 0:
+            return -1
+        
+        s1 = self.head
+        for i in range(index):
+            if s1 is None:
+                return -1
+            s1 = s1.next
+        
+        if s1 is None:
+            return -1
+        
+        return s1.data
+
+            
+
         
         
             
@@ -86,3 +105,5 @@ sl.deletion_at_end()
 sl.traversal()
 sl.deletion_at_specfic(4)
 sl.traversal()
+value = sl.get(0)
+print('this is value',value)
