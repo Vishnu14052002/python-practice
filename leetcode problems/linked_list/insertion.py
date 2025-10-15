@@ -45,6 +45,22 @@ class SinglyLL:
             s1 = s1.next
             prev = prev.next
         prev.next = None
+    
+    def deletion_at_specfic(self, point):
+        prev = self.head
+        s1 = self.head.next
+        ahead = s1.next
+        for i in range(point-1):
+            print()
+            prev = prev.next
+            s1 = s1.next
+            ahead = ahead.next
+        prev.next = ahead
+        s1.next = None
+        
+        
+            
+
 
 # coommitssdfsdaf
 sl = SinglyLL()
@@ -67,4 +83,6 @@ sl.traversal()
 sl.deletion_at_beginning()
 sl.traversal()
 sl.deletion_at_end()
+sl.traversal()
+sl.deletion_at_specfic(4)
 sl.traversal()
