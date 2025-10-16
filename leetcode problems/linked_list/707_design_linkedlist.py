@@ -9,7 +9,26 @@ class MyLinkedList:
         self.head = None
         
 
-    # def get(self, index: int) -> int:
+    def get(self, index: int) -> int:
+        if index < 0:
+            print(-1)
+            return -1
+        elif index == 0:
+            print(self.head.val)
+            return self.head.val
+
+        else:
+            prev = self.head
+            s1 = self.head.next
+            for i in range(index-1):
+                s1 = s1.next
+                prev = prev.next
+                if s1 == None:
+                    print(-1)
+                    return -1
+
+            print('get ',s1.val)
+        
         
 
     def addAtHead(self, val: int) -> None:
@@ -56,7 +75,6 @@ class MyLinkedList:
             s1 = s1.next
             prev = prev.next
             if s1 == None:
-                print('je')
                 return -1
 
 
@@ -71,17 +89,49 @@ class MyLinkedList:
             
         
 
-    # def deleteAtIndex(self, index: int) -> None:
+    def deleteAtIndex(self, index: int) -> None:
+        if index < 0:
+            print(-1)
+            return -1
+        
+        elif index == 0:
+            s1 = self.head.next
+            s2 = s1.next
+            self.head = s1
+            self.head.next = s2
+            return
+
+        
+        prev = self.head
+        s1 = self.head.next
+        s2 = s1.next
+        for i in range(index-1):
+            s1 = s1.next
+            prev = prev.next
+            s2 = s2.next
+            if s1 == None:
+                return -1
+            elif s2 == None:
+                prev.next = None
+            else:
+                prev.next = s2
+        
+            
+
+        # print(prev.val, s1.val, s2.val)
+
+            
 
 
 myLinkedList = MyLinkedList()
+myLinkedList.addAtHead(10)
 myLinkedList.addAtHead(8)
 myLinkedList.addAtHead(6)
 myLinkedList.addAtHead(3)
-myLinkedList.addAtHead(1)
+myLinkedList.addAtHead(5)
 # myLinkedList.addAtTail(3)
 myLinkedList.addAtIndex(10, 5)
-# myLinkedList.get(1)            
-# myLinkedList.deleteAtIndex(1)    
+myLinkedList.get(1)            
+myLinkedList.deleteAtIndex(2)    
 # myLinkedList.get(1)   
 myLinkedList.traversal()    
