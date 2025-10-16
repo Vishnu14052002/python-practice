@@ -26,7 +26,7 @@ class MyLinkedList:
                 if s1 == None:
                     print(-1)
                     return -1
-
+            return s1.val
             print('get ',s1.val)
         
         
@@ -101,6 +101,13 @@ class MyLinkedList:
             self.head.next = s2
             return
 
+        elif index == 1:
+            prev = self.head
+            s1 = self.head.next
+            s2 = s1.next
+            prev.next = s2
+            return
+
         
         prev = self.head
         s1 = self.head.next
@@ -124,14 +131,11 @@ class MyLinkedList:
 
 
 myLinkedList = MyLinkedList()
-myLinkedList.addAtHead(10)
-myLinkedList.addAtHead(8)
-myLinkedList.addAtHead(6)
-myLinkedList.addAtHead(3)
-myLinkedList.addAtHead(5)
-# myLinkedList.addAtTail(3)
-myLinkedList.addAtIndex(10, 5)
-myLinkedList.get(1)            
-myLinkedList.deleteAtIndex(2)    
-# myLinkedList.get(1)   
-myLinkedList.traversal()    
+res1 = myLinkedList.addAtHead(1)
+res2 = myLinkedList.addAtTail(3)
+res3 = myLinkedList.addAtIndex(1, 2)
+myLinkedList.traversal()
+res4 = myLinkedList.get(1)
+res5 = myLinkedList.deleteAtIndex(1)
+val = myLinkedList.get(1)  
+print(res1, res2, res3, res4, res5, val)
