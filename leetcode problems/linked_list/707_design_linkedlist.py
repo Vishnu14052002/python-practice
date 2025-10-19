@@ -141,4 +141,3 @@ val = myLinkedList.get(1)
 print(res1, res2, res3, res4, res5, val)
 
 # commmitsaskdnisNDfjkansd
-# asdf
