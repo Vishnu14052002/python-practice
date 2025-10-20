@@ -24,10 +24,10 @@ class MyLinkedList():
             s1.next = addAtTail
         
     def addAtIndex(self, index, val):
-        if val < 0:
+        if index < 0:
             return
         
-        if val == 0:
+        if index == 0:
             self.addAtTop(val)
             return
         
@@ -43,6 +43,27 @@ class MyLinkedList():
         addAtIndex = Node(val)
         prev.next = addAtIndex
         addAtIndex.next = s1
+
+    def deleteAtIndex(self, index):
+        if index < 0 or self.head is None:
+            return
+
+        if index == 0:
+            self.head = self.head.next
+            return
+            
+        current = self.head
+
+        for i in range(index-1):
+            if current.next is None:
+                return
+            current = current.next
+        if current.next is None:
+            return
+        
+        current.next = current.next.next
+
+        
 
         
 
@@ -62,4 +83,5 @@ LL.addAtTop(10)
 LL.addAtTail(100)
 LL.addAtTail(200)
 LL.addAtIndex(5, 35)
+LL.deleteAtIndex(5)
 LL.traverse()
