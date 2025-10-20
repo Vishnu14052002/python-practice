@@ -32,7 +32,10 @@ class MyLinkedList():
             return
         
         prev = self.head
+        s1 = prev.next
+        nextt = s1.next
         
+
 
     def traverse(self):
         s1 = self.head
@@ -48,4 +51,5 @@ LL.addAtTop(20)
 LL.addAtTop(10)
 LL.addAtTail(100)
 LL.addAtTail(200)
+LL.addAtIndex(2)
 LL.traverse()
