@@ -8,4 +8,5 @@ int main(){
     cout << num << endl;
     cout << num << "\n";
     return 0;
+    hbhmbmj
 }
