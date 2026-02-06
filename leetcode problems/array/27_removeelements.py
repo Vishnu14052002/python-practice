@@ -5,7 +5,7 @@ class Solution:
             if nums[i] != val:
                 nums[p1] = nums[i]
                 p1 += 1
-                
+                p
         print(nums, p1)
 
 
