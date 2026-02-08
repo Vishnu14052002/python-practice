@@ -1,15 +1,16 @@
 class Solution:
-    def dummy(self, nums):
+    def dummy(self, nums, val):
         p1 = 0
         for i in range(len(nums)):
-            if nums[p1] < nums[i]:
-                p1 += 1
+            if nums[i] != val:
                 nums[p1] = nums[i]
-                
-            print(p1+1)
+                p1 += 1
+        print(nums[:p1])
+
 
 
 
 obj = Solution()
-nums = [0,0,1,1,1,2,2,3,3,4]
-obj.dummy(nums)
+val = 2
+nums = [0,1,2,2,3,0,4,2]
+obj.dummy(nums, val)

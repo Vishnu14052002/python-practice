@@ -11,7 +11,7 @@ class Solution:
 
 
 
-nums = [0,0,1,1,1,2,2,3,3,4]
+nums = [0,1,1,1,2,2,3,3,4]
 obj = Solution()
 a = obj.removeDuplicates(nums)
 print(a)
